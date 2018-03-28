@@ -16,6 +16,7 @@ api.get('/movie', movieCtrl.getMovies)
 api.get('/movie/:movieId', movieCtrl.getMovie)
 api.post('/movie', auth, movieCtrl.saveMovie)
 api.put('/movie/:movieId', movieCtrl.updateMovie)
+api.delete('/movie/:productId', movieCtrl.deleteMovie)
 api.post('/signup', userCtrl.signUp)
 api.post('/signin', userCtrl.signIn)
 api.get('/private', auth , (req, res) => {
