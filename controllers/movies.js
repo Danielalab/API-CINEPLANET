@@ -24,8 +24,7 @@ function getMovies(req, res) {
 function saveMovie(req, res) {
   let movie = new Movie()
   movie.name = req.body.name
-  movie.imgver = req.body.imgver
-  movie.imghor = req.body.imghor  
+  movie.img = req.body.img
   movie.description = req.body.description
   movie.director = req.body.director
   movie.language = req.body.language.replace(/\'?/gi, '').split(',')
