@@ -23,11 +23,12 @@ function getProducts(req, res) {
 
 function saveProduct(req, res) {
   let product = new Product()
+  product.location = req.body.location
   product.name = req.body.name
-  product.picture = req.body.picture
-  product.price = req.body.price
-  product.category = req.body.category
-  product.description = req.body.description
+  product.movies = req.body.movies.replace(/\'?/gi, '').split(',')
+  product.type = req.body.type.replace(/\'?/gi, '').split(',')
+  product.prices = JSON.parse(req.body.prices)
+  product.seats = req.body.seats 
 
   product.save((err, productStored) => {
     if (err) res.status(500).send({ message: `error al salvar la base de datos: ${err}`})
